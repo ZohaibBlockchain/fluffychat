@@ -1,0 +1,8 @@
+app_identifier("com.p2pchatter.app") # The bundle identifier of your app
+apple_id("christian-kussowski@posteo.de") # Your Apple email address
+
+itc_team_id("122628977") # App Store Connect Team ID
+team_id("NT478Z3MPZ") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

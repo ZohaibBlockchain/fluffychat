@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "102434485672",
+    "project_id": "chit-51902",
+    "storage_bucket": "chit-51902.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102434485672:android:f230e44f1fa5fbe2ef999d",
+        "android_client_info": {
+          "package_name": "com.p2pchatter.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4Cdic31yYYSxTHNkuha1o5FibM2_sino"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
