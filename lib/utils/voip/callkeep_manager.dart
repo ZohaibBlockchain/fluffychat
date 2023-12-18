@@ -1,13 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
 import 'package:callkeep/callkeep.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:matrix/matrix.dart';
 import 'package:permission_handler/permission_handler.dart';
-
 import 'package:fluffychat/utils/voip_plugin.dart';
 
 class CallKeeper {
@@ -86,7 +84,7 @@ class CallKeepManager {
   late FlutterCallkeep _callKeep;
   VoipPlugin? _voipPlugin;
 
-  String get appName => 'FluffyChat';
+  String get appName => 'ChitChat';
 
   Future<bool> get hasPhoneAccountEnabled async =>
       await _callKeep.hasPhoneAccount();
@@ -99,7 +97,7 @@ class CallKeepManager {
         'okButton': 'ok',
         // Required to get audio in background when using Android 11
         'foregroundService': {
-          'channelId': 'com.fluffy.fluffychat',
+          'channelId': 'com.p2pchatter.app',
           'channelName': 'Foreground service for my app',
           'notificationTitle': '$appName is running on background',
           'notificationIcon': 'mipmap/ic_notification_launcher',
@@ -234,9 +232,9 @@ class CallKeepManager {
     addCall(call.callId, callKeeper);
     await _callKeep.displayIncomingCall(
       call.callId,
-      '${call.room.getLocalizedDisplayname()} (FluffyChat)',
+      '${call.room.getLocalizedDisplayname()} (Chitchat)',
       localizedCallerName:
-          '${call.room.getLocalizedDisplayname()} (FluffyChat)',
+          '${call.room.getLocalizedDisplayname()} (Chitchat)',
       handleType: 'number',
       hasVideo: call.type == CallType.kVideo,
     );

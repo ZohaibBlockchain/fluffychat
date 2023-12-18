@@ -54,15 +54,16 @@ abstract class AppConfig {
   static const bool hideTypingUsernames = false;
   static const bool hideAllStateEvents = false;
   static const String inviteLinkPrefix = 'https://matrix.to/#/';
-  static const String deepLinkPrefix = 'im.fluffychat://chat/';
+  // static const String deepLinkPrefix = 'im.fluffychat://chat/';
+   static const String deepLinkPrefix = 'p2pchatter://chat/';
   static const String schemePrefix = 'matrix:';
-  static const String pushNotificationsChannelId = 'fluffychat_push';
-  static const String pushNotificationsChannelName = 'FluffyChat push channel';
+  static const String pushNotificationsChannelId = 'chitchat_push';
+  static const String pushNotificationsChannelName = 'ChitChat push channel';
   static const String pushNotificationsChannelDescription =
-      'Push notifications for FluffyChat';
+      'Push notifications for ChitChat';
   static const String pushNotificationsAppId = 'com.p2pchatter.app';
   static const String pushNotificationsGatewayUrl =
-      'https://push.fluffychat.im/_matrix/push/v1/notify';
+      'https://p2pchatter.com/_matrix/push/v1/notify';
   static const String pushNotificationsPusherFormat = 'event_id_only';
   static const String emojiFontName = 'Noto Emoji';
   static const String emojiFontUrl =

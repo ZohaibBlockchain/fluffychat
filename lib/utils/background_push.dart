@@ -1,21 +1,4 @@
-/*
- *   Famedly
- *   Copyright (C) 2020, 2021 Famedly GmbH
- *   Copyright (C) 2021 Fluffychat
- *
- *   This program is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU Affero General Public License as
- *   published by the Free Software Foundation, either version 3 of the
- *   License, or (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *   GNU Affero General Public License for more details.
- *
- *   You should have received a copy of the GNU Affero General Public License
- *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
+
 
 import 'dart:async';
 import 'dart:convert';
@@ -293,6 +276,7 @@ class BackgroundPush {
       try {
         _fcmToken = await firebase?.getToken();
         if (_fcmToken == null) throw ('PushToken is null');
+        print('Zohaib Firebase Token: $_fcmToken'); // This line will print the token to the console.
       } catch (e, s) {
         Logs().w('[Push] cannot get token', e, e is String ? null : s);
         await _noFcmWarning();
@@ -337,8 +321,10 @@ class BackgroundPush {
       await _upUnregistered(i);
       return;
     }
-    var endpoint =
-        'https://matrix.gateway.unifiedpush.org/_matrix/push/v1/notify';
+    // var endpoint =
+    //     'https://matrix.gateway.unifiedpush.org/_matrix/push/v1/notify';
+     var endpoint =
+        'https://p2pchatter.com/_matrix/push/v1/notify';
     try {
       final url = Uri.parse(newEndpoint)
           .replace(
@@ -354,6 +340,7 @@ class BackgroundPush {
           (res['unifiedpush'] is Map &&
               res['unifiedpush']['gateway'] == 'matrix')) {
         endpoint = url;
+        print('zohaib ' + url);
       }
     } catch (e) {
       Logs().i(
